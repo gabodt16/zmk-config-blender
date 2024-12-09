@@ -1,7 +1,7 @@
 if SHIELD_BLENDER
 
 config ZKM_KEYBOARD_NAME
-  sting "Blender"
+  string "Blender"
   default "Blender"
 
 endif
