@@ -1,0 +1,6 @@
+if SHIELD_BLENDER
+
+config ZKM_KEYBOARD_NAME
+  default "Blender"
+
+endif
