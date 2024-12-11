@@ -9,8 +9,8 @@
 
     default_layer {
       bindings = <
-        &kp LC(MB3)  &mkp MB3  &lt 5 N
-        &kp LS(MB3)  &kp LC(Z) &lt 2 TAB
+        &kp LC(mkp MB3)  &mkp MB3  &lt 5 N
+        &kp LS(&mkp MB3)  &kp LC(Z) &lt 2 TAB
         &kp LC(C)     &kp LC(V) &lt 1 LC(X)
       >;
     };
