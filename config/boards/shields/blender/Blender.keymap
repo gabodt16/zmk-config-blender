@@ -5,15 +5,19 @@
 
 / {
   macros {
-    lc_mb3: macro {
-      label = "LC_MB3";
-      bindings = <&kp LC>, <&mkp MB3>;
+    lc_mb3: lc_mb3 {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_press &kp LC>,
+                <&macro_press &mkp MB3>,
+                <&macro_release &mkp MB3>,
+                <&macro_release &kp LC>;
     };
     
     ls_mb3: ls_mb3 {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      binding = <&macro_press &kp LSHFT>,
+      bindings = <&macro_press &kp LSHFT>,
                 <&macro_press &mkp MB3>,
                 <&macro_release &mkp MB3>,
                 <&macro_release &kp LSHFT>;
