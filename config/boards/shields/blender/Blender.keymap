@@ -4,13 +4,29 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
+  macros {
+    lc_mb3: macro {
+      label = "LC_MB3";
+      bindings = <&kp LC>, <&mkp MB3>;
+    };
+    
+    ls_mb3: ls_mb3 {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      binding = <&macro_press &kp LSHFT>,
+                <&macro_press &mkp MB3>,
+                <&macro_release &mkp MB3>,
+                <&macro_release &kp LSHFT>;
+    };
+  };
+
   keymap {
     compatible = "zmk,keymap";
 
     default_layer {
       bindings = <
-        &kp LC(mkp MB3)  &mkp MB3  &lt 5 N
-        &kp LS(&mkp MB3)  &kp LC(Z) &lt 2 TAB
+        &lc_mb3  &mkp MB3  &lt 5 N
+        &ls_mb3  &kp LC(Z) &lt 2 TAB
         &kp LC(C)     &kp LC(V) &lt 1 LC(X)
       >;
     };
