@@ -10,7 +10,7 @@
 
         default_layer {
             bindings = <
-&kp C      &mkp MB3   &lt 5 N
+&kp A      &mkp MB3   &lt 5 N
 &kp B      &kp LC(Z)  &lt 2 TAB
 &kp LC(C)  &kp LC(V)  &lt 1 LC(X)
             >;
@@ -42,7 +42,7 @@
 
         layer_4 {
             bindings = <
-&kp N0     &kp N1         &kp F3
+&kp N0     &kp N1         &lt 8 F3
 &kp N2     &kp N3         &trans
 &kp LS(W)  &kp LA(LS(W))  &trans
             >;
@@ -50,9 +50,9 @@
 
         layer_5 {
             bindings = <
-&trans  &trans  &trans
-&trans  &trans  &trans
-&trans  &trans  &trans
+&kp F1  &kp F2   &trans
+&kp F3  &kp F4   &kp F5
+&kp F6  &kp F11  &kp F12
             >;
         };
 
@@ -74,9 +74,9 @@
 
         layer_8 {
             bindings = <
-&bootloader  &trans  &trans
-&trans       &trans  &trans
-&sys_reset   &trans  &trans
+&bootloader  &bootloader  &trans
+&bootloader  &bootloader  &trans
+&sys_reset   &sys_reset   &trans
             >;
         };
     };
