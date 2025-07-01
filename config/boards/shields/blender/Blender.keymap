@@ -5,45 +5,197 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-  macros{
-    gx_macro: gx_macro {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <
-        &macro_tap &kp G
-        &macro_tap &kp X
-      >;
-    }; 
-  };
-  
+    macros {
+        external_geometry: gx_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp X>;
+            label = "GX_MACRO";
+        };
+
+        polyline: gm_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp M>;
+            label = "GM_MACRO";
+        };
+
+        construction_geometry: gn_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp N>;
+            label = "GN_MACRO";
+        };
+
+        create_arc: ga_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp A>;
+            label = "GA_MACRO";
+        };
+
+        create_line: create_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp L>;
+            label = "CREATE_LINE";
+        };
+
+        circle: circle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp C>;
+            label = "CIRCLE";
+        };
+
+        ellipse: ellipse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp E &kp E>;
+            label = "ELLIPSE";
+        };
+
+        rectangle: rectangle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp R>;
+            label = "RECTANGLE";
+        };
+
+        last_polygon: last_polygon {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp P &kp P>;
+            label = "LAST_POLYGON";
+        };
+
+        triangle: triangle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp P &kp N3>;
+            label = "TRIANGLE";
+        };
+
+        pentagon: pentagon {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp P &kp N5>;
+            label = "PENTAGON";
+        };
+
+        hexagon: hexagon {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp P &kp N6>;
+            label = "HEXAGON";
+        };
+
+        b_spline: b_spline {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp B &kp B>;
+            label = "B_SPLINE";
+        };
+
+        fillet: fillet {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp F &kp F>;
+            label = "FILLET";
+        };
+
+        chamfer: chamfer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp F &kp C>;
+            label = "CHAMFER";
+        };
+
+        trim_edge: trim_edge {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp T>;
+            label = "TRIM_EDGE";
+        };
+
+        split_edge: split_edge {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp Z>;
+            label = "SPLIT_EDGE";
+        };
+
+        rotate: rotate {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp P>;
+            label = "ROTATE";
+        };
+
+        scale_transform: scale_transform {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp P &kp S>;
+            label = "SCALE_TRANSFORM";
+        };
+
+        offset: offset {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp T>;
+            label = "OFFSET";
+        };
+
+        symmetry: symmetry {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp S>;
+            label = "SYMMETRY";
+        };
+
+        s_under_constrained: s_under_constrained {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp F>;
+            label = "S_UNDER_CONSTRAINED";
+        };
+
+        s_redundant_constraints: s_redundant_constraints {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp P &kp R>;
+            label = "S_REDUNDANT_CONSTRAINTS";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        Home {
             bindings = <
-&kp A      &gx_macro &lt 5 N
-&kp B      &kp LC(Z)  &lt 2 TAB
-&kp LC(C)  &kp LC(V)  &lt 1 LC(X)
+&polyline       &external_geometry  &lt 5 C
+&kp LC(C)       &kp LC(V)           &lt 2 A
+&kp LEFT_SHIFT  &kp LC(Z)           &lt 1 LC(X)
             >;
         };
 
-        layer_1 {
+        freecad1 {
             bindings = <
-&kp DEL    &kp HOME  &lt 6 END
-&kp LC(B)  &kp P     &lt 3 S
-&kp LS(E)  &kp C     &trans
+&kp DEL                 &kp HOME  &lt 6 END
+&construction_geometry  &kp P     &lt 3 S
+&lt 12 E                &kp T     &trans
             >;
         };
 
-        layer_2 {
+        freecad2 {
             bindings = <
-&kp LC(J)  &kp LA(E)  &lt 7 B
-&kp LA(D)  &kp LS(R)  &trans
-&kp LS(D)  &kp LS(G)  &lt 4 G
+&create_line  &create_arc    &lt 7 LC(S)
+&circle       &ellipse       &trans
+&rectangle    &last_polygon  &lt 4 D
             >;
         };
 
-        layer_3 {
+        Media {
             bindings = <
 &kp C_VOL_UP  &kp C_NEXT        &kp C_AL_CALC
 &kp C_VOL_DN  &kp C_PLAY_PAUSE  &trans
@@ -51,43 +203,91 @@
             >;
         };
 
-        layer_4 {
+        freecad3 {
             bindings = <
-&kp N0     &kp N1         &lt 8 F3
-&kp N2     &kp N3         &trans
-&kp LS(W)  &kp LA(LS(W))  &trans
+&triangle  &pentagon  &lt 8 LC(E)
+&hexagon   &b_spline  &trans
+&fillet    &chamfer   &trans
             >;
         };
 
-        layer_5 {
+        f_layer {
             bindings = <
 &kp F1  &kp F2   &trans
-&kp F3  &kp F4   &kp F5
+&kp F3  &kp F4   &lt 9 F5
 &kp F6  &kp F11  &kp F12
             >;
         };
 
-        layer_6 {
+        freecad_4 {
             bindings = <
-&trans  &trans  &trans
-&trans  &trans  &trans
-&trans  &trans  &trans
+&trim_edge  &split_edge       &trans
+&rotate     &scale_transform  &lt 11 LC(I)
+&offset     &symmetry         &trans
             >;
         };
 
-        layer_7 {
+        Bluetooth {
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &trans
 &bt BT_SEL 2  &bt BT_SEL 3  &trans
-&bt BT_CLR    &bt BT_SEL 4  &lt 8 X
+&bt BT_CLR    &bt BT_SEL 4  &lt 8 LC(Y)
             >;
         };
 
-        layer_8 {
+        Bootloader {
             bindings = <
 &bootloader  &bootloader  &trans
 &bootloader  &bootloader  &trans
 &sys_reset   &sys_reset   &trans
+            >;
+        };
+
+        f_layer_2 {
+            bindings = <
+&kp F7   &kp F8   &trans
+&kp F9   &kp F10  &trans
+&kp F13  &kp F14  &lt 10 F15
+            >;
+        };
+
+        f_layer_3 {
+            bindings = <
+&kp F16  &kp F17  &trans
+&kp F18  &kp F19  &trans
+&kp F20  &kp F21  &trans
+            >;
+        };
+
+        freecad_5 {
+            bindings = <
+&s_under_constrained  &s_redundant_constraints  &trans
+&trans                &trans                    &trans
+&trans                &trans                    &trans
+            >;
+        };
+
+        profiles {
+            bindings = <
+&trans  &trans       &bootloader
+&to 0   &to 13       &bootloader
+&trans  &bootloader  &trans
+            >;
+        };
+
+        Home2 {
+            bindings = <
+&trans  &to 0   &trans
+&trans  &trans  &lt 14 A
+&trans  &trans  &lt 1 B
+            >;
+        };
+
+        navigation {
+            bindings = <
+&kp LC(W)        &kp PG_UP    &trans
+&kp LC(LS(TAB))  &kp LC(TAB)  &trans
+&mkp MB1         &kp PG_DN    &trans
             >;
         };
     };
