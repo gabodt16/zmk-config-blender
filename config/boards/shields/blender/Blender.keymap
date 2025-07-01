@@ -5,12 +5,22 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+  macros{
+    gx_macro: gx_macro {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <
+        &macro_tap &kp G
+        &macro_tap &kp X
+      >;
+    }; 
+  }
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp A      &mkp MB3   &lt 5 N
+&kp A      &gx_macro &lt 5 N
 &kp B      &kp LC(Z)  &lt 2 TAB
 &kp LC(C)  &kp LC(V)  &lt 1 LC(X)
             >;
