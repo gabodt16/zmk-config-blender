@@ -14,7 +14,8 @@
         &macro_tap &kp X
       >;
     }; 
-  }
+  };
+  
     keymap {
         compatible = "zmk,keymap";
 
