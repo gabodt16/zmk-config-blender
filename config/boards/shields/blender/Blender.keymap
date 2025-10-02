@@ -277,9 +277,9 @@
 
         Home2 {
             bindings = <
-&trans  &to 0   &trans
-&trans  &trans  &lt 14 A
-&trans  &trans  &lt 1 B
+&trans            &to 0           &trans
+&kp LEFT_CONTROL  &kp LEFT_SHIFT  &lt 14 A
+&kp S             &kp N           &lt 1 B
             >;
         };
 
