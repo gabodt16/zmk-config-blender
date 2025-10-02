@@ -277,7 +277,7 @@
 
         Home2 {
             bindings = <
-&trans            &to 0           &trans
+&kp LC(Z)         &to 0           &kp LC(LS(Z))
 &kp LEFT_CONTROL  &kp LEFT_SHIFT  &lt 14 A
 &kp S             &kp N           &lt 1 B
             >;
