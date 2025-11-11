@@ -290,5 +290,21 @@
 &mkp MB1         &kp PG_DN    &trans
             >;
         };
+
+        steam_deck {
+            bindings = <
+&kp LC(F1)     &kp LC(F2)     &lt 16 LC(F11)
+&kp LC(KP_N0)  &kp LC(KP_N1)  &kp LC(F3)
+&kp LC(F6)     &kp LC(F7)     &lt 1 F21
+            >;
+        };
+
+        steam_deck_2{
+            bindings = <
+&kp LC(F10) &kp LC(KP_N2) &trans
+&trans      &trans        &trans
+&trans      &to 0         &trans
+            >;
+        };
     };
 };
