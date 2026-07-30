@@ -309,9 +309,9 @@
 
         arrow_layer {
             bindings = <
-&to 0           &kp UP_ARROW    &trans
-&kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
-&trans          &trans          &kp RIGHT_SHIFT
+&to 0           &kp UP    &trans
+&kp LEFT        &kp DOWN  &kp RIGHT
+&trans          &trans    &kp RIGHT_SHIFT
             >;
 
         };
